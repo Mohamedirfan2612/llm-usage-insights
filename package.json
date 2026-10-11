@@ -1,0 +1,90 @@
+{
+  "name": "llm-usage-insights",
+  "version": "1.0.0",
+  "description": "Lightweight, production-ready LLM token analytics, model-wise cost reports, and usage tracking for Node.js and TypeScript.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json",
+    "./pricing": {
+      "types": "./dist/pricing.d.ts",
+      "import": "./dist/pricing.js",
+      "require": "./dist/pricing.cjs"
+    },
+    "./providers": {
+      "types": "./dist/providers/index.d.ts",
+      "import": "./dist/providers/index.js",
+      "require": "./dist/providers/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "pricing",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit",
+    "prepack": "npm run build && npm run test"
+  },
+  "keywords": [
+    "llm",
+    "ai",
+    "tokens",
+    "analytics",
+    "cost-tracking",
+    "openai",
+    "anthropic",
+    "token-counter",
+    "usage-tracker",
+    "finops",
+    "pricing",
+    "budget"
+  ],
+  "author": "MohamedIrfan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mohamedirfan2612/llm-usage-insights.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mohamedirfan2612/llm-usage-insights/issues"
+  },
+  "homepage": "https://github.com/Mohamedirfan2612/llm-usage-insights#readme",
+  "peerDependencies": {
+    "@anthropic-ai/sdk": "^0.36.0",
+    "openai": "^4.85.0"
+  },
+  "peerDependenciesMeta": {
+    "@anthropic-ai/sdk": {
+      "optional": true
+    },
+    "openai": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@types/node": "^22.13.9",
+    "openai": "^4.86.1",
+    "tsup": "^8.4.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.7"
+  }
+}
